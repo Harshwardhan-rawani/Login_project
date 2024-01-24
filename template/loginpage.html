@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </head>
+  <body style="font-family: 'Trirong', serif;" class="bg-success">
+    <div class=" d-flex justify-content-center align-items-center" style="height:730px">
+
+        <form action="{% url 'submitloginform' %}" method="POST" class="w-50 d-flex justify-content-center align-items-center shadow-lg p-3 mb-5  rounded" style="background:linear-gradient(to top,rgba(0, 0, 0, 0.511),rgba(0, 0, 0, 0.532)); height: 450px;">
+            {% csrf_token %}
+            <div class="d-flex flex-column ">
+                <div class="container-fluid">
+                    <div class="row" style="color:white;">
+
+                        <div class="col-4"><h1><i class="fa-solid fa-user"></i></h1></div>
+                        <div class="col-4"><h1 style="text-decoration: underline;">Login</h1></div>
+                        <div class="col-4"></div>
+                    </div>
+                </div>
+                <br>
+                <div class="form-floating mt-3">
+                    <input type="email" class="form-control"  style="width: 350px;" placeholder="name@example.com" name="loginEmail">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <br>
+                <div class="form-floating">
+                    <input type="password" class="form-control"  style="width: 350px;" placeholder="Password" name="loginPassword">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary" style="width: 350px;">Login</button>
+                
+                <div style="color: red;">{{error}}</div>
+                <br>
+                <div style="color: white;"><span>---------------------------</span>or<span>---------------------------</span></div>
+                <div  class="d-flex justify-content-center"><a href="create" style="color: white; text-decoration: none;">Create New Account</a></div><br>
+                <div class="container d-flex justify-content-center">
+                    <a href=""><i class="fa-brands fa-google fa-2xl mx-3" style="color: #ffffff; "></i></a>
+                    <a href=""><i class="fa-brands fa-facebook fa-2xl mx-3" style="color: #ffffff;"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram fa-2xl mx-3" style="color: #ffffff;"></i></a>
+                </div>
+            </div>
+            
+        </form>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
